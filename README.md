@@ -1,10 +1,8 @@
 ## Overcoming Measurement Inconsistency in Deep Learning for Linear Inverse Problems: Applications in Medical Imaging ##
 
-
-Python 3.x code to reproduce the experiments in
-
 [![CircleCI](https://circleci.com/gh/marijavella/mri-tvtv.svg?style=svg)](https://app.circleci.com/pipelines/github/marijavella/mri-tvtv)
 
+Python 3.x code to reproduce the experiments in
 
 [Overcoming Measurement Inconsistency in Deep Learning for Linear Inverse Problems: Applications in Medical Imaging](https://arxiv.org/abs/2011.14387)
 
