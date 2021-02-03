@@ -7,7 +7,7 @@ Python 3.x code to reproduce the experiments in
 [Overcoming Measurement Inconsistency in Deep Learning for Linear Inverse Problems: Applications in Medical Imaging](https://arxiv.org/abs/2011.14387)
 
 Marija Vella, João F. C. Mota<br/>
-submitted, 2020
+Accepted to ICASSP 2021
 
 ### Overview ###
 
