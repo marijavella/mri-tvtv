@@ -26,7 +26,7 @@ Given a measurement image and the corresponding reconstructed output w from a MR
 
 ## Testing ##
 
-Note that this repo is optimized to give faster execution times rather than better data consistency. The code used in the paper optimizes the consistency resulting in longer running times. The only difference is that the tolerance in the conjugate gradient method is set to 10e-2 in this repo while to obtain the resutlts in the paper, we use 10e-5. This can be easily modified in line 78 in TVTV_Solver.py. 
+Note that this repo is optimized to give faster execution times rather than better data consistency. The code used in the paper optimizes the consistency resulting in longer running times. The only difference is that the tolerance in the conjugate gradient method is set to 10e-2 in this repo while to obtain the results in the paper, we use 10e-5. This can be easily modified in line 78 in TVTV_Solver.py. 
 
 ### Demo ###
 
@@ -38,9 +38,9 @@ cd mri-tvtv
 python demo.py
 ```
 
-### Testing different networks, datasets and operators ###
+### Testing different networks and datasets ###
 
-We consider two MRI acquisition models: multi-channel (MoDL) and dyanmic MRI (CRNN). The first configuration extracts information from multiple coils while the latter uses a single coil. The measurement matrix A for each is defined as:
+We consider two MRI acquisition models: multi-channel (MoDL) and dyanmic MRI (CRNN). The first configuration extracts information from multiple coils while the latter uses a single coil. 
 
 #### MoDL ####
 
@@ -54,7 +54,7 @@ To generate the outputs from MoDL and TV-TV by running the whole framework use:
 git clone https://github.com/marijavella/tvtv-mri
 python test.py 
 ```
-Please check test.py for the differet configuartion settings accepted. 
+Please check test.py for the different configuration settings accepted. 
 
 The brain dataset used to test this network can be downloaded from <a href="https://drive.google.com/file/d/1qp-l9kJbRfQU1W5wCjOQZi7I3T6jwA37/view?usp=sharing"> here.</a> Then place this in the ```data``` folder.</p> 
 
@@ -64,7 +64,7 @@ The brain dataset used to test this network can be downloaded from <a href="http
 git clone https://github.com/marijavella/tvtv-mri
 python test.py --network crnn  --beta 0.8 --nsamples 30 --crop False --multi_coil False
 ```
-The sampling mask are randomly generated, to obtain the same results as in the paper, by default the used mask is loaded. If you would like to generate a ranodm mask on every run kindly comment out line 80 in ```uitls/compressed_sensing.py```. 
+The sampling mask are randomly generated, to obtain the same results as in the paper, by default the used mask is loaded. If you would like to generate a random mask on every run kindly comment out line 80 in ```uitls/compressed_sensing.py```. 
 
 The provided cardiac dataset can be also downloaded from <a href="https://github.com/js3611/Deep-MRI-Reconstruction/blob/master/data/cardiac.mat"> here.</a></p>
 
