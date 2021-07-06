@@ -288,13 +288,13 @@ def TVTVSolver(M, N, w_im, beta, b, mask, rho, MAX_ITER, *args):
         r_prim_norm = LA.norm(r_prim_r + r_prim_i*1j, ord=2)
 
         # Dual Residual
-        s_dual_r[0:2*n] = -rho*(D(v_r, Fc_v, Fc_h) + D(v_prev_r, Fc_v, Fc_h))
-        s_dual_r[2*n:3*n] = -rho * (v_r + v_prev_r)
-        s_dual_r[3*n:5*n] = -rho * (z_r + z_prev_r)
+        s_dual_r[0:2*n] = -rho*(D(v_r, Fc_v, Fc_h) - D(v_prev_r, Fc_v, Fc_h))
+        s_dual_r[2*n:3*n] = -rho * (v_r - v_prev_r)
+        s_dual_r[3*n:5*n] = -rho * (z_r - z_prev_r)
 
-        s_dual_i[0:2*n] = -rho*(D(v_i, Fc_v, Fc_h) + D(v_prev_i, Fc_v, Fc_h))
-        s_dual_i[2*n:3*n] = -rho*(v_i + v_prev_i)
-        s_dual_i[3*n:5*n] = -rho*(z_i + z_prev_i)
+        s_dual_i[0:2*n] = -rho*(D(v_i, Fc_v, Fc_h) - D(v_prev_i, Fc_v, Fc_h))
+        s_dual_i[2*n:3*n] = -rho*(v_i - v_prev_i)
+        s_dual_i[3*n:5*n] = -rho*(z_i - z_prev_i)
 
         s_dual_norm = LA.norm(s_dual_r + s_dual_i*1j, ord=2)
 
